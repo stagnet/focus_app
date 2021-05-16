@@ -1,2 +1,2 @@
 # focus_app
-A small minimal app which helps you to stay focus for a particular task
+A small minimal app which helps you to stay focus for a particular task using react native.
