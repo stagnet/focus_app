@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Text, StyleSheet, View, Vibration, Platform } from "react-native";
-import { Icon, LinearProgress } from "react-native-elements";
-import { Timing } from "./Timing";
-import { Countdown } from "../components/Countdown";
-import { RoundedButton } from "../components/RoundedButton";
-import { useKeepAwake } from "expo-keep-awake";
+import React, { useState } from 'react';
+import { Text, StyleSheet, View, Vibration, Platform } from 'react-native';
+import { Icon, LinearProgress } from 'react-native-elements';
+import { Timing } from './Timing';
+import { Countdown } from '../components/Countdown';
+import { RoundedButton } from '../components/RoundedButton';
+import { useKeepAwake } from 'expo-keep-awake';
 
 const DEFUALT_TIME = 1;
 const ONE_SEC_IN_MS = 1000;
@@ -29,7 +29,7 @@ export const Timer = ({ taskName, onTimerEnd, clearTask }) => {
   };
 
   const vibrate = () => {
-    if (Platform.OS === "ios") {
+    if (Platform.OS === 'ios') {
       // Vibration.vibrate(6 * ONE_SEC_IN_MS);
       const interval = setInterval(() => Vibration.vibrate(), 1000);
       setTimeout(() => clearInterval(interval), 6000);
@@ -63,9 +63,9 @@ export const Timer = ({ taskName, onTimerEnd, clearTask }) => {
       </View>
       <View style={styles.prgressBarWrapper}>
         <LinearProgress
-          color="primary"
+          color='primary'
           style={{ height: 10 }}
-          variant="determinate"
+          variant='determinate'
           value={progress}
         />
       </View>
@@ -77,31 +77,31 @@ export const Timer = ({ taskName, onTimerEnd, clearTask }) => {
       <View style={styles.buttonWrapper}>
         {isStarted ? (
           <RoundedButton
-            color="#e77f67"
-            title="Pause"
-            iconPosition="top"
+            color='#e77f67'
+            title='Pause'
+            iconPosition='top'
             icon={
               <Icon
-                name="pause-circle-outline"
-                type="ionicon"
+                name='pause-circle-outline'
+                type='ionicon'
                 size={25}
-                color="white"
+                color='white'
               />
             }
-            textStyle={{ marginLeft: 6, color: "white" }}
+            textStyle={{ marginLeft: 6, color: 'white' }}
             onPress={() => setIsStarted(false)}
           />
         ) : (
           <RoundedButton
-            color="#3dc1d3"
-            title="Start"
-            iconPosition="top"
+            color='#3dc1d3'
+            title='Start'
+            iconPosition='top'
             icon={
               <Icon
-                name="caret-forward-circle-outline"
-                type="ionicon"
+                name='caret-forward-circle-outline'
+                type='ionicon'
                 size={30}
-                color="black"
+                color='black'
               />
             }
             textStyle={{ marginLeft: 6 }}
@@ -113,10 +113,10 @@ export const Timer = ({ taskName, onTimerEnd, clearTask }) => {
       {/* //* cancle button */}
       <View style={styles.cancleButton}>
         <RoundedButton
-          color="#e74c3c"
+          color='#e74c3c'
           size={50}
           icon={
-            <Icon name="close-outline" type="ionicon" size={18} color="black" />
+            <Icon name='close-outline' type='ionicon' size={18} color='black' />
           }
           onPress={() => clearTask()}
         />
@@ -129,27 +129,27 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    color: "#fff",
-    textAlign: "center",
+    color: '#fff',
+    textAlign: 'center',
   },
   task: {
-    color: "#fff",
-    textAlign: "center",
-    fontWeight: "bold",
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
   countdown: {
     flex: 0.4,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonWrapper: {
     flex: 0.3,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   prgressBarWrapper: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingTop: 25,
     marginHorizontal: 10,
   },
